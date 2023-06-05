@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <h1>
+        Guess The Number 
+    </h1>
+    <label>Click the button to demonstrate the prompt box.</label>
+<br>
+<br>
+    <button onclick="myFunction()">Try it</button>
+<p id="demo"></p>
+<script>
+const random = Math.floor(Math.random() * 10) + 1;
+var guessCount = 1;
+function myFunction() {
+let number =parseInt(prompt( 'guess a number between 1 to 10:'));
+
+if(number > random){
+ document.getElementById("demo").innerHTML = "your guess number:" + number + " is too high! Try again";
+}
+else if(number < random){
+    document.getElementById("demo").innerHTML = "your guess number:" + number + "is too low! Try again";
+}
+else if(number == random)
+{
+    document.getElementById("demo").innerHTML = "your guess number:" + number +" is match. Congratulation!!" + "your total attempts are :" + guessCount;
+}
+else{
+    document.getElementById("demo").innerHTML = "pls enter value";
+}
+guessCount++;
+}
+</script>
+
+
+</body>
+</html>
